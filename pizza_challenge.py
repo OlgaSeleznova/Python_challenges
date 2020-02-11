@@ -28,7 +28,7 @@ def append_to_collections(types, values, types_collector, values_collector):
 
 def find_sum():
     # iterate through the list of pizza slices, starting from the maximum numbers in reversed order, until it fits the
-    # maximum number of slices (target) and then from the smallest numbers until there are maximum number of slices possible
+    # maximum number of slices (target) until there are maximum number of slices possible
     num_pieces, target, pz_types = read_file(my_file)
     remain = target
     types_collector = []
@@ -39,13 +39,7 @@ def find_sum():
                 remain = remain - num
                 append_to_collections(num_pieces.index(num), num, types_collector, values_collector)
                 continue
-            # elif remain < num:
-            #     for n_num in num_pieces:
-            #         if remain >= n_num:
-            #             remain = remain - n_num
-            #             append_to_collections(num_pieces.index(n_num), n_num, types_collector, values_collector)
-            #         else:
-            #             break
+
         else:
             print('something went wrong')
     ordered_pieces = len(set(types_collector))
